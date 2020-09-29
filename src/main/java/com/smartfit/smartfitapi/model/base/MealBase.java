@@ -12,7 +12,6 @@ public class MealBase {
     private String name;
     private String imageUrl;
     private String type;
-    private Integer servingSize;
     private Integer calories;
 
     public MealBase() {

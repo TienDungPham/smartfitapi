@@ -8,6 +8,5 @@ public class MealDTO {
     private String name;
     private String imageUrl;
     private String type;
-    private Integer servingSize;
     private Integer calories;
 }
