@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+    <link th:href="@{/css/checkout.css}" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <form class="checkout-form" action="/payment/confirm">
+        <div class="wr">
+            <h3>Checkout</h3>
+        </div>
+        <div class="wr">
+            <div class="i-wr">
+                <img src="https://www.flaticon.com/svg/static/icons/svg/776/776510.svg"/>
+            </div>
+        </div>
+        <div class="wr">
+            <label>Owner</label>
+            <input type="text" th:value="${ownerName}" disabled>
+            <input type="text" th:value="${accessToken}" name="accessToken" hidden id="access-token"/>
+        </div>
+        <div class="wr">
+            <label for="month-count">Monthly Subscription</label>
+            <input type="number" value="1" name="monthCount" min="1" max="12" id="month-count"
+                   onchange="updatePrice()">
+        </div>
+        <div class="wr">
+            <span id="total-price">Total: 1 x 1 (months) = 15$</span>
+            <button type="submit" onclick="showLoader()">Pay</button>
+        </div>
+    </form>
+</div>
+
+<div id="loader-wrapper">
+    <div class="loader"></div>
+</div>
+<script>
+    function updatePrice() {
+        const monthCount = document.getElementById("month-count").value;
+        document.getElementById("total-price").innerHTML = `Total: 1 x ${monthCount} (months) = ${monthCount * 1}$`
+    }
+
+    function showLoader() {
+        const loaderWrapper = document.getElementById("loader-wrapper");
+        loaderWrapper.style.display = "flex"
+    }
+
+    updatePrice()
+</script>
+</body>
+</html>
