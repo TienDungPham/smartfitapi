@@ -124,7 +124,7 @@ public class UserAuthService {
     private UserProfile createUserProfile(UserSignUp su) {
         UserProfile userProfile = UserProfile.builder()
                 .name(su.getName())
-                .imageUrl("")
+                .imageUrl("https://res.cloudinary.com/dtasyh91f/image/upload/v1601405117/public/public_1_gxulfz.png")
                 .weight(su.getWeight())
                 .height(su.getHeight())
                 .age(su.getWeight())

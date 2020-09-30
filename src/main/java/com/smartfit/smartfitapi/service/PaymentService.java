@@ -28,8 +28,8 @@ public class PaymentService {
 
     private final String clientId = "AYSq3RDGsmBLJE-otTkBtM-jBRd1TCQwFf9RGfwddNXWz0uFU9ztymylOhRS";
     private final String clientSecret = "EGnHDxD_qRPdaLdZz8iCr8N7_MzF-YHPTkjs6NKYQvQSBngp4PTTVWkPZRbL";
-    private final String successUrl = "https://smartfitapi.herokuapp.com/payment/checkout-success";
-    private final String cancelUrl = "https://smartfitapi.herokuapp.com/payment/checkout-fail";
+    private final String successUrl = "https://smartfitapi2.herokuapp.com/payment/checkout-success";
+    private final String cancelUrl = "https://smartfitapi2.herokuapp.com/payment/checkout-fail";
 
     public ServiceResult<String> findUserName(String accessToken) {
         ServiceResult<String> result = new ServiceResult<>();
