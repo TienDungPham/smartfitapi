@@ -236,6 +236,13 @@ public class UserInfoService {
                     .stream()
                     .filter(us -> Utils.isSameDay(us.getAccessTime(), new Date()))
                     .collect(Collectors.toList());
+            List<UserMeal> userMeals = userAccess
+                    .getUserProfile()
+                    .getUserMeals()
+                    .stream()
+                    .filter(um -> Utils.isSameDay(um.getEatenDate(), new Date()))
+                    .collect(Collectors.toList());
+
             Integer todayCalories = 0;
             long dateDiffInSeconds = 0L;
             for (UserSession us : userSessions) {
@@ -243,10 +250,16 @@ public class UserInfoService {
                 dateDiffInSeconds += Utils.getDateDiffInSeconds(us.getAccessTime(), us.getLeaveTime());
             }
 
+            Integer goalCalories = calculateGoal(userAccess.getUserProfile());
+            for (UserMeal um : userMeals) {
+                goalCalories += um.getTotalCalories();
+            }
+
             UserProgressDTO resultData = new UserProgressDTO();
             resultData.setCalories(todayCalories);
             resultData.setMinutes(Long.toString(dateDiffInSeconds / 60));
             resultData.setWorkouts(userSessions.size());
+            resultData.setGoal(goalCalories);
 
             result.setData(resultData);
             result.setCode(ServiceResult.ResultCode.SUCCESS);
@@ -254,5 +267,32 @@ public class UserInfoService {
             result.setCode(ServiceResult.ResultCode.UNKNOWN);
         }
         return result;
+    }
+
+    private Integer calculateGoal(UserProfile up) {
+        double bmr = 0D;
+        if (!up.getGender()) {
+            bmr = 66 + (13.7 * up.getWeight()) + (5 * up.getHeight()) - (6.8 * up.getAge());
+
+        } else {
+            bmr = 655 + (9.6 * up.getWeight()) + (1.8 * up.getHeight()) - (4.7 * up.getAge());
+        }
+        double dailyCalories = bmr * 1.465;
+        double goalCalories = 0D;
+        switch (up.getGoal()) {
+            case "Mile Weight Loss":
+                goalCalories = dailyCalories - dailyCalories * 86 / 100;
+                break;
+            case "Weight Loss":
+                goalCalories = dailyCalories - dailyCalories * 73 / 100;
+                break;
+            case "Extreme Weight Loss":
+                goalCalories = dailyCalories - dailyCalories * 46 / 100;
+                break;
+            default:
+                goalCalories = dailyCalories - dailyCalories;
+                break;
+        }
+        return Math.round((float) goalCalories);
     }
 }

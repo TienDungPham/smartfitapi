@@ -7,4 +7,5 @@ public class UserProgressDTO {
     private Integer workouts;
     private String minutes;
     private Integer calories;
+    private Integer goal;
 }
