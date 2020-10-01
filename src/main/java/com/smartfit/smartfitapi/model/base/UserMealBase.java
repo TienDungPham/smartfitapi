@@ -12,6 +12,7 @@ import java.util.Date;
 public class UserMealBase {
     private Integer totalCalories;
     private Date eatenDate;
+    private Integer servingSize;
 
     public UserMealBase() {
     }

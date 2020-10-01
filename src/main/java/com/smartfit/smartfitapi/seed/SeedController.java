@@ -45,8 +45,8 @@ public class SeedController {
             );
 
             createMeal("Apple", "", AppEnumBase.MealType.CARBS.getString(), 59);
-            createMeal("Banana", "", AppEnumBase.MealType.CARBS.getString(), 151);
-            createMeal("Grapes", "", AppEnumBase.MealType.CARBS.getString(), 100);
+            createMeal("Beef", "", AppEnumBase.MealType.PROTEIN.getString(), 142);
+            createMeal("Hamburger", "", AppEnumBase.MealType.FAT.getString(), 250);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

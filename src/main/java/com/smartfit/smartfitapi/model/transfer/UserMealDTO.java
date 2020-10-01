@@ -9,5 +9,6 @@ public class UserMealDTO {
     private Long id;
     private Integer totalCalories;
     private Date eatenDate;
+    private Integer servingSize;
     private MealDTO meal;
 }

@@ -214,6 +214,7 @@ public class UserInfoService {
                     .userProfile(userProfile)
                     .meal(meal.get())
                     .eatenDate(new Date())
+                    .servingSize(newUpdate.getServingSize())
                     .totalCalories(meal.get().getCalories() * newUpdate.getServingSize())
                     .build();
             userMealRepository.save(userMeal);
