@@ -35,18 +35,79 @@ public class SeedController {
             StaffAccount staffAccount = createStaffAccount(staffProfile);
 
             createCourseWithStep(
-                    "Chest Toner",
+                    "Cool Down Stretch",
                     "https://res.cloudinary.com/dtasyh91f/image/upload/v1601404977/3_wiluqj.jpg",
-                    "Easy exercises, but effective. Follow this workout to tone and define your chest",
+                    "A quick and simple beginner flexibility routine that can be done in 9 minutes",
                     AppEnumBase.CourseType.WEIGHT_LOSS.getString(),
                     AppEnumBase.Level.BEGINNER.getString(),
                     2,
                     AppEnumBase.OrderType.MONTHLY.getString()
             );
 
-            createMeal("Apple", "", AppEnumBase.MealType.CARBS.getString(), 59);
+            createCourseWithStep(
+                    "Deskercise",
+                    "https://res.cloudinary.com/dtasyh91f/image/upload/v1601404977/4_lfcspo.jpg",
+                    "Try this office stretching workout next time you are feeling tired at work to boot your energy levels and productivity",
+                    AppEnumBase.CourseType.WEIGHT_LOSS.getString(),
+                    AppEnumBase.Level.BEGINNER.getString(),
+                    2,
+                    AppEnumBase.OrderType.MONTHLY.getString()
+            );
+
+            createCourseWithStep(
+                    "Goodnight Stretch",
+                    "https://res.cloudinary.com/dtasyh91f/image/upload/v1601404977/6_ucbq4k.jpg",
+                    "At the end of a stressful day, try these stretches on your bed to help relax and fall asleep quickly, and better sounder sleep is awaiting!",
+                    AppEnumBase.CourseType.WEIGHT_LOSS.getString(),
+                    AppEnumBase.Level.INTERMEDIATE.getString(),
+                    1,
+                    AppEnumBase.OrderType.MONTHLY.getString()
+            );
+
+            createCourseWithStep(
+                    "Knee Friendly",
+                    "https://res.cloudinary.com/dtasyh91f/image/upload/v1601404977/8_fvcluo.jpg",
+                    "Got some knee pain but still want to work up a sweat? Give this knee friendly a try",
+                    AppEnumBase.CourseType.WEIGHT_LOSS.getString(),
+                    AppEnumBase.Level.INTERMEDIATE.getString(),
+                    1,
+                    AppEnumBase.OrderType.MONTHLY.getString()
+            );
+
+            createCourseWithStep(
+                    "Morning Espresso",
+                    "https://res.cloudinary.com/dtasyh91f/image/upload/v1601404976/5_tjh6fv.jpg",
+                    "Plan to be a morning person? Get moving and start an energizing morning along with this workout",
+                    AppEnumBase.CourseType.WEIGHT_LOSS.getString(),
+                    AppEnumBase.Level.ADVANCED.getString(),
+                    1,
+                    AppEnumBase.OrderType.MONTHLY.getString()
+            );
+
+            createCourseWithStep(
+                    "Total Stretch",
+                    "https://res.cloudinary.com/dtasyh91f/image/upload/v1601404976/10_ugxt4h.jpg",
+                    "This workout will increases flexibility and range of motion and allows you to get the most out of your workous",
+                    AppEnumBase.CourseType.WEIGHT_LOSS.getString(),
+                    AppEnumBase.Level.ADVANCED.getString(),
+                    1,
+                    AppEnumBase.OrderType.MONTHLY.getString()
+            );
+
+            createMeal("Bread", "", AppEnumBase.MealType.CARBS.getString(), 75);
+            createMeal("Butter", "", AppEnumBase.MealType.CARBS.getString(), 102);
+            createMeal("Cheeseburger", "", AppEnumBase.MealType.CARBS.getString(), 285);
+            createMeal("Pizza", "", AppEnumBase.MealType.CARBS.getString(), 285);
+
             createMeal("Beef", "", AppEnumBase.MealType.PROTEIN.getString(), 142);
+            createMeal("Chicken", "", AppEnumBase.MealType.PROTEIN.getString(), 136);
+            createMeal("Tofu", "", AppEnumBase.MealType.PROTEIN.getString(), 86);
+            createMeal("Egg", "", AppEnumBase.MealType.PROTEIN.getString(), 78);
+
             createMeal("Hamburger", "", AppEnumBase.MealType.FAT.getString(), 250);
+            createMeal("Beer", "", AppEnumBase.MealType.FAT.getString(), 154);
+            createMeal("Apple cider", "", AppEnumBase.MealType.FAT.getString(), 117);
+            createMeal("Yogurt ", "", AppEnumBase.MealType.FAT.getString(), 110);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -93,36 +154,53 @@ public class SeedController {
         course = courseRepository.save(course);
         List<CourseStep> courseSteps = new LinkedList<>();
         courseSteps.add(CourseStep.builder()
-                .name("Butt Kicks")
+                .name("Tree")
                 .type(AppEnumBase.StepType.PRACTICE.getString())
-                .description("<ol><li>Start standing tall and bring one heel off the floor towards your glutes, the opposite hand comes up towards your shoulder like running arms</li><li>Switch to the other side</li></ol>")
+                .description("<ol><li>Take a moment to feel both your feet root into the floor with your weight distributed equally on all four corners of each foot.</li><li>Begin to shift your weight into your right foot, lifting your left foot off the floor. Keep your right leg straight but don't lock the knee.</li><li>Bend your left knee and bring&nbsp;the sole of your left foot high onto your inner right thigh.&nbsp;</li><li>Press your foot into your thigh and your thigh back into your foot with equal pressure. This will help you&nbsp;keep both hips squared toward the front so&nbsp;your right hip doesn't jut out.</li><li>Focus your gaze on something that doesn't move to help you keep your balance.</li><li>Take 5 to 10 breaths, then lower your left foot to the floor and do the other side.</li></ol>")
                 .videoUrl("https://res.cloudinary.com/dtasyh91f/video/upload/v1601408194/videos/how-to-do-a-butt-kick_ruerlt.mp4")
                 .pose("")
                 .course(course)
                 .build());
         courseSteps.add(CourseStep.builder()
-                .name("Butt Kicks")
-                .type(AppEnumBase.StepType.EXERCISE_COUNT.getString())
-                .description("<ol><li>Start standing tall and bring one heel off the floor towards your glutes, the opposite hand comes up towards your shoulder like running arms</li><li>Switch to the other side</li></ol>")
+                .name("Tree")
+                .type(AppEnumBase.StepType.EXERCISE.getString())
+                .description("<ol><li>Take a moment to feel both your feet root into the floor with your weight distributed equally on all four corners of each foot.</li><li>Begin to shift your weight into your right foot, lifting your left foot off the floor. Keep your right leg straight but don't lock the knee.</li><li>Bend your left knee and bring&nbsp;the sole of your left foot high onto your inner right thigh.&nbsp;</li><li>Press your foot into your thigh and your thigh back into your foot with equal pressure. This will help you&nbsp;keep both hips squared toward the front so&nbsp;your right hip doesn't jut out.</li><li>Focus your gaze on something that doesn't move to help you keep your balance.</li><li>Take 5 to 10 breaths, then lower your left foot to the floor and do the other side.</li></ol>")
                 .videoUrl("https://res.cloudinary.com/dtasyh91f/video/upload/v1601408194/videos/how-to-do-a-butt-kick_ruerlt.mp4")
-                .pose("butt_kicks")
+                .pose("tree")
                 .course(course)
                 .build());
 
         courseSteps.add(CourseStep.builder()
-                .name("Squat Jumps")
+                .name("Triangle")
                 .type(AppEnumBase.StepType.PRACTICE.getString())
-                .description("<ol><li>Stand with your feet shoulder-width apart</li><li>Start by doing a regular squat, then engage your core and jump up explosively</li><li>When you land, lower your body back into the squat position</li><li>Repeat</li></ol>")
-                .videoUrl("https://res.cloudinary.com/dtasyh91f/video/upload/v1601407864/videos/how-to-do-a-squat-jump_yo9bsa.mp4")
+                .description("<ol><li>Engage your&nbsp;right thigh muscles and draw your&nbsp;right femur into its socket. Extend your right hand toward the front of the room, keeping your&nbsp;right hip tucked.</li><li>Lower your right hand down onto your shin or ankle. If you are more open, bring your right hand to&nbsp;the floor on the inside or on the right foot. Do whichever one feels most comfortable.</li><li>The left shoulder stacks on top of the right one as you open your chest, reaching your left fingertips toward the ceiling&nbsp;while keeping your&nbsp;left shoulder rooted in its socket.&nbsp;</li><li>Turn your head to take your gaze up toward your left fingertips. If this is uncomfortable for your neck, it's also fine to keep the head in a more neutral position.&nbsp;</li><li>Continue to draw your right thigh muscles upward, deepening the crease in your&nbsp;right hip.</li><li>Soften your right knee slightly to prevent hyperextension (this is called a microbend).</li><li>Stay for at least 5 breaths.</li><li>Repeat the pose with your left leg forward.</li></ol>")
+                .videoUrl("https://res.cloudinary.com/dtasyh91f/video/upload/v1601408194/videos/how-to-do-a-butt-kick_ruerlt.mp4")
                 .pose("")
                 .course(course)
                 .build());
         courseSteps.add(CourseStep.builder()
-                .name("Squat Jumps")
+                .name("Triangle")
                 .type(AppEnumBase.StepType.EXERCISE.getString())
-                .description("<ol><li>Stand with your feet shoulder-width apart</li><li>Start by doing a regular squat, then engage your core and jump up explosively</li><li>When you land, lower your body back into the squat position</li><li>Repeat</li></ol>")
-                .videoUrl("https://res.cloudinary.com/dtasyh91f/video/upload/v1601407864/videos/how-to-do-a-squat-jump_yo9bsa.mp4")
-                .pose("squat_jumps")
+                .description("<ol><li>Engage your&nbsp;right thigh muscles and draw your&nbsp;right femur into its socket. Extend your right hand toward the front of the room, keeping your&nbsp;right hip tucked.</li><li>Lower your right hand down onto your shin or ankle. If you are more open, bring your right hand to&nbsp;the floor on the inside or on the right foot. Do whichever one feels most comfortable.</li><li>The left shoulder stacks on top of the right one as you open your chest, reaching your left fingertips toward the ceiling&nbsp;while keeping your&nbsp;left shoulder rooted in its socket.&nbsp;</li><li>Turn your head to take your gaze up toward your left fingertips. If this is uncomfortable for your neck, it's also fine to keep the head in a more neutral position.&nbsp;</li><li>Continue to draw your right thigh muscles upward, deepening the crease in your&nbsp;right hip.</li><li>Soften your right knee slightly to prevent hyperextension (this is called a microbend).</li><li>Stay for at least 5 breaths.</li><li>Repeat the pose with your left leg forward.</li></ol>")
+                .videoUrl("https://res.cloudinary.com/dtasyh91f/video/upload/v1601408194/videos/how-to-do-a-butt-kick_ruerlt.mp4")
+                .pose("triangle")
+                .course(course)
+                .build());
+
+        courseSteps.add(CourseStep.builder()
+                .name("Reverse Warrior")
+                .type(AppEnumBase.StepType.PRACTICE.getString())
+                .description("<ol><li>Lean your torso toward the front of your mat and then circle your right hand up toward the ceiling for a big stretch along your right side. Keep your right arm plugged into the shoulder socket. Your left hand comes down to rest lightly on the back of your left thigh.</li><li>Bring your gaze up to the right fingertips.</li><li>Hold for five breaths and then switch sides.</li></ol>")
+                .videoUrl("https://res.cloudinary.com/dtasyh91f/video/upload/v1601408194/videos/how-to-do-a-butt-kick_ruerlt.mp4")
+                .pose("")
+                .course(course)
+                .build());
+        courseSteps.add(CourseStep.builder()
+                .name("Reverse Warrior")
+                .type(AppEnumBase.StepType.EXERCISE.getString())
+                .description("<ol><li>Lean your torso toward the front of your mat and then circle your right hand up toward the ceiling for a big stretch along your right side. Keep your right arm plugged into the shoulder socket. Your left hand comes down to rest lightly on the back of your left thigh.</li><li>Bring your gaze up to the right fingertips.</li><li>Hold for five breaths and then switch sides.</li></ol>")
+                .videoUrl("https://res.cloudinary.com/dtasyh91f/video/upload/v1601408194/videos/how-to-do-a-butt-kick_ruerlt.mp4")
+                .pose("reversewarrior")
                 .course(course)
                 .build());
         courseStepRepository.saveAll(courseSteps);
