@@ -20,4 +20,6 @@ public interface UserMapper {
     List<UserCourseDTO> userCoursesToDTO(List<UserCourse> userCourses);
 
     List<UserMealDTO> userMealsToDTO(List<UserMeal> userMeals);
+
+    List<UserProfileDTO> userProfilesToDTO(List<UserProfile> userProfiles);
 }
