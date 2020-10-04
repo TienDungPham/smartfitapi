@@ -31,7 +31,7 @@ public class StaffAuthService {
     public ServiceResult<StaffAccessDTO> signIn(StaffSignIn si) {
         ServiceResult<StaffAccessDTO> result = new ServiceResult<>();
         try {
-            StaffAccount staffAccount = staffAccountRepository.signIn(si.getEmail(), si.getPassword());
+            StaffAccount staffAccount = staffAccountRepository.signIn(si.getEmail(), Utils.hashPassword(si.getPassword()));
             if (staffAccount != null) {
                 StaffAccess staffAccess = generateStaffAccess(staffAccount.getStaffProfile());
                 StaffAccessDTO resultData = staffMapper.staffAccessToDTO(staffAccess);
@@ -129,7 +129,7 @@ public class StaffAuthService {
     private StaffAccount createStaffAccount(StaffSignUp su, StaffProfile staffProfile) {
         StaffAccount staffAccount = StaffAccount.builder()
                 .email(su.getEmail())
-                .password(su.getPassword())
+                .password(Utils.hashPassword(su.getPassword()))
                 .isVerified(true)
                 .staffProfile(staffProfile)
                 .build();
