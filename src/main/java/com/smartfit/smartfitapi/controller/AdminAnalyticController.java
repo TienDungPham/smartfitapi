@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @CrossOrigin
 @Controller
-@RequestMapping(path = "/api/v2")
+@RequestMapping(path = "/api/v2/admin-analytic")
 public class AdminAnalyticController {
     @Autowired
     private AdminAnalyticService adminAnalyticService;

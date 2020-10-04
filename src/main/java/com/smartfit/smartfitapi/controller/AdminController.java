@@ -13,7 +13,7 @@ import java.util.List;
 
 @CrossOrigin
 @Controller
-@RequestMapping(path = "/api/v2")
+@RequestMapping(path = "/api/v2/admin")
 public class AdminController {
     @Autowired
     private AdminService adminService;
