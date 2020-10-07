@@ -26,8 +26,8 @@ public class PaymentService {
     @Autowired
     private UserPaymentRepository userPaymentRepository;
 
-    private final String clientId = "AYSq3RDGsmBLJE-otTkBtM-jBRd1TCQwFf9RGfwddNXWz0uFU9ztymylOhRS";
-    private final String clientSecret = "EGnHDxD_qRPdaLdZz8iCr8N7_MzF-YHPTkjs6NKYQvQSBngp4PTTVWkPZRbL";
+    private final String clientId = "AUbNFYaqf4ERlWYNokLyzsqGTfevRfTWwoFO42rIc3aEw0qOJgPQqCkN5OKpqm484socRj2cQpHOwQ-D";
+    private final String clientSecret = "EPGXeA6GL9IN2p1Y-vWlKDQH7SnAN-re5dd2z3ahw4ShyVjV05Pii1WbUqCFNnNKAzQYroGrTk31uqc0";
     private final String successUrl = "https://smartfitapi2.herokuapp.com/payment/checkout-success";
     private final String cancelUrl = "https://smartfitapi2.herokuapp.com/payment/checkout-fail";
 

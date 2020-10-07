@@ -127,7 +127,7 @@ public class UserAuthService {
                 .imageUrl("https://res.cloudinary.com/dtasyh91f/image/upload/v1601405117/public/public_1_gxulfz.png")
                 .weight(su.getWeight())
                 .height(su.getHeight())
-                .age(su.getWeight())
+                .age(su.getAge())
                 .gender(su.getGender())
                 .goal(su.getGoal())
                 .build();
