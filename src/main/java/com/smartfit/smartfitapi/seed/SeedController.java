@@ -165,7 +165,7 @@ public class SeedController {
                 .name("Tree")
                 .type(AppEnumBase.StepType.EXERCISE.getString())
                 .description("<ol><li>Take a moment to feel both your feet root into the floor with your weight distributed equally on all four corners of each foot.</li><li>Begin to shift your weight into your right foot, lifting your left foot off the floor. Keep your right leg straight but don't lock the knee.</li><li>Bend your left knee and bring the sole of your left foot high onto your inner right thigh. </li><li>Press your foot into your thigh and your thigh back into your foot with equal pressure. This will help you keep both hips squared toward the front so your right hip doesn't jut out.</li><li>Focus your gaze on something that doesn't move to help you keep your balance.</li><li>Take 5 to 10 breaths, then lower your left foot to the floor and do the other side.</li></ol>")
-                .videoUrl("https://res.cloudinary.com/dtasyh91f/video/upload/v1601408194/videos/how-to-do-a-butt-kick_ruerlt.mp4")
+                .videoUrl("https://res.cloudinary.com/dtasyh91f/image/upload/v1602133184/ezgif.com-gif-maker_wr9ecu.gif")
                 .pose("tree")
                 .course(course)
                 .build());
@@ -182,7 +182,7 @@ public class SeedController {
                 .name("Triangle")
                 .type(AppEnumBase.StepType.EXERCISE.getString())
                 .description("<ol><li>Engage your right thigh muscles and draw your right femur into its socket. Extend your right hand toward the front of the room, keeping your right hip tucked.</li><li>Lower your right hand down onto your shin or ankle. If you are more open, bring your right hand to the floor on the inside or on the right foot. Do whichever one feels most comfortable.</li><li>The left shoulder stacks on top of the right one as you open your chest, reaching your left fingertips toward the ceiling while keeping your left shoulder rooted in its socket. </li><li>Turn your head to take your gaze up toward your left fingertips. If this is uncomfortable for your neck, it's also fine to keep the head in a more neutral position. </li><li>Continue to draw your right thigh muscles upward, deepening the crease in your right hip.</li><li>Soften your right knee slightly to prevent hyperextension (this is called a microbend).</li><li>Stay for at least 5 breaths.</li><li>Repeat the pose with your left leg forward.</li></ol>")
-                .videoUrl("https://res.cloudinary.com/dtasyh91f/video/upload/v1601408194/videos/how-to-do-a-butt-kick_ruerlt.mp4")
+                .videoUrl("https://res.cloudinary.com/dtasyh91f/image/upload/v1602133184/ezgif.com-gif-maker_wr9ecu.gif")
                 .pose("triangle")
                 .course(course)
                 .build());
@@ -199,7 +199,7 @@ public class SeedController {
                 .name("Reverse Warrior")
                 .type(AppEnumBase.StepType.EXERCISE.getString())
                 .description("<ol><li>Lean your torso toward the front of your mat and then circle your right hand up toward the ceiling for a big stretch along your right side. Keep your right arm plugged into the shoulder socket. Your left hand comes down to rest lightly on the back of your left thigh.</li><li>Bring your gaze up to the right fingertips.</li><li>Hold for five breaths and then switch sides.</li></ol>")
-                .videoUrl("https://res.cloudinary.com/dtasyh91f/video/upload/v1601408194/videos/how-to-do-a-butt-kick_ruerlt.mp4")
+                .videoUrl("https://res.cloudinary.com/dtasyh91f/image/upload/v1602133184/ezgif.com-gif-maker_wr9ecu.gif")
                 .pose("reversewarrior")
                 .course(course)
                 .build());
